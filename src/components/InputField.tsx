@@ -4,17 +4,17 @@ import "./styles.css";
 interface props {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
-  handleAdd: (e: React.FormEvent) => void;
+  handleOnAdd: (e: React.FormEvent) => void;
 }
 
-const InputField: React.FC<props> = ({ todo, setTodo, handleAdd }) => {
+const InputField: React.FC<props> = ({ todo, setTodo, handleOnAdd }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <form
       className="input"
       onSubmit={(e) => {
-        handleAdd(e);
+        handleOnAdd(e);
         inputRef.current?.blur();
       }}
     >

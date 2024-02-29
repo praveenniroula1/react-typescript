@@ -10,7 +10,7 @@ const App: React.FC = () => {
   const [todos, setTodos] = useState<Array<Todo>>([]);
   const [CompletedTodos, setCompletedTodos] = useState<Array<Todo>>([]);
 
-  const handleAdd = (e: React.FormEvent) => {
+  const handleOnAdd = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (todo) {
@@ -62,7 +62,7 @@ const App: React.FC = () => {
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="App">
         <span className="heading">Taskify</span>
-        <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+        <InputField todo={todo} setTodo={setTodo} handleOnAdd={handleOnAdd} />
         <TodoList
           todos={todos}
           setTodos={setTodos}
